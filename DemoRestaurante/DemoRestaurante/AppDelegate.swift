@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
         IQKeyboardManager.sharedManager().enable = true
+        if let config = LocalFileService.getDictionaryFromPlist(withName: "config") {
+            print(config["url"]!)
+        }
         
         return true
     }
